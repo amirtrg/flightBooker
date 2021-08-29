@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [isMenu, setIsMenu] = useState(false);
+
   const menuItems = [
     { name: "خانه", href: "#" },
     { name: "درباره ما", href: "#" },
@@ -10,7 +11,7 @@ const NavBar = () => {
   ];
   const ResponsiveMenu = () => {
     return (
-      <div className="bg-black bg-opacity-90 backdrop-filter backdrop-blur-sm fixed left-0 right-0 top-0 bottom-0 block z-50 w-screen h-screen transition duration-500 ease-in-out">
+      <div className="bg-black bg-opacity-90 backdrop-filter backdrop-blur-sm fixed left-0 right-0 top-0 bottom-0 block z-20 w-screen h-screen transition duration-500 ease-in-out">
         <ul className="flex flex-col justify-center items-center w-full h-full ">
           <button
             className="absolute right-10 top-10 w-20 h-10 bottom-0 text-md p-2  rounded font-medium uppercase bg-purple-600 bg-opacity-75 shadow-md text-white"
@@ -26,19 +27,23 @@ const NavBar = () => {
                 {item.name}
               </MenuItem>
             );
-          })}<MenuItem
-            href="#"
-            color="py-2 px-5 rounded bg-purple-600 text-white hover:bg-purple-800 focus:ring-4 focus:ring-offset-2 focus:ring-purple-500"
+          })}
+          <button
+            className="py-2 px-5 rounded bg-purple-600 text-white hover:bg-purple-800 focus:ring-4 focus:ring-offset-2 focus:ring-purple-500"
+            onClick={props.onOpenLogin}
           >
             ورود
-          </MenuItem>
+          </button>
         </ul>
       </div>
     );
   };
   const MenuItem = (props) => {
     return (
-      <li className={`font-light capitalize text-xl m-1 p-2 ${props.color}`}>
+      <li
+        className={`font-light capitalize text-xl m-1 p-2 ${props.color}`}
+        onClick={props.onClick}
+      >
         <a href={props.href}>{props.children}</a>
       </li>
     );
@@ -69,12 +74,12 @@ const NavBar = () => {
               </MenuItem>
             );
           })}
-          <MenuItem
-            href="#"
-            color="my-2 px-3 py-1 rounded bg-purple-600 text-white hover:bg-purple-800 focus:ring-4 focus:ring-offset-2 focus:ring-purple-500"
+          <button
+            className="my-2 px-5 py-2 rounded bg-purple-600 text-white hover:bg-purple-800 focus:ring-4 focus:ring-offset-2 focus:ring-purple-500"
+            onClick={props.onOpenLogin}
           >
             ورود
-          </MenuItem>
+          </button>
         </ul>
       </nav>
     </>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url("/src/fonts/Yekan.css");
-@import url("/src/fonts/Lalezar.css");
+@import url('https://v1.fontapi.ir/css/Lalezar');
 *{
     direction: rtl;
     font-family: 'Yekan',tahoma,Arial, Helvetica, sans-serif;

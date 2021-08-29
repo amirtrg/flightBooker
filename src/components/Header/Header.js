@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Banner from "./Banner";
-import NavBar from './NavBar';
+import LoginMenu from "./LoginSystem/LoginMenu";
+import NavBar from "./NavBar";
 
 const Header = () => {
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+
+  const openMenuHandler = () => {
+    setIsLoginOpen(true);
+  };
+  const closeMenuHandler = () => {
+    setIsLoginOpen(false);
+  };
   return (
     <header className="container m-auto box-border">
-     <NavBar/>
-     <Banner/>
+      {isLoginOpen && <LoginMenu onClose={closeMenuHandler} />}
+
+      <NavBar onOpenLogin={openMenuHandler} />
+      <Banner />
     </header>
   );
 };
