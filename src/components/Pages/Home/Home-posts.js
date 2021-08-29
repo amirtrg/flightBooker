@@ -11,7 +11,7 @@ const HomePosts = (props) => {
         <h3 className="text-md p-3 capitalize text-center text-gray-900">
           {props.title}
         </h3>
-        <img src={props.img} />
+        <img src={props.img} alt={props.title}/>
         <p className="text-black text-opacity-75 capitalize pt-2 text-sm my-2">
           شروع تور از {props.price}
         </p>
@@ -41,6 +41,7 @@ const HomePosts = (props) => {
               price={pckg.price}
               period={pckg.period}
               img={pckg.img}
+              key={Math.random()}
             />
           );
         })}

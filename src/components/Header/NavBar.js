@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const NavBar = (props) => {
   const [isMenu, setIsMenu] = useState(false);
@@ -23,7 +23,7 @@ const NavBar = (props) => {
           </button>
           {menuItems.map((item) => {
             return (
-              <MenuItem color="text-white" href={item.href}>
+              <MenuItem color="text-white" href={item.href} key={Math.random()}>
                 {item.name}
               </MenuItem>
             );
@@ -69,7 +69,7 @@ const NavBar = (props) => {
         <ul className="space-x-5 hidden md:flex items-center p-2">
           {menuItems.map((item) => {
             return (
-              <MenuItem className="text-black" href={item.href}>
+              <MenuItem className="text-black" href={item.href} key={Math.random()}>
                 {item.name}
               </MenuItem>
             );
