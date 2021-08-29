@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("/src/fonts/Yekan.css");
+@import url("/src/fonts/Lalezar.css");
+*{
+    direction: rtl;
+    font-family: 'Yekan',tahoma,Arial, Helvetica, sans-serif;
+}
+.logo{
+    font-family: 'Lalezar','Yekan',tahoma,Arial, Helvetica, sans-serif;
+}
