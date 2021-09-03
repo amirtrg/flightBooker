@@ -146,16 +146,15 @@ const Home = () => {
         price: "1.800.000 تومان",
         period: "3 روز",
         img: Destination,
-      }
+      },
     ],
   };
   return (
     <main className="container mx-auto p-2">
       <HomePosts {...Popular} />
-      <HomePosts {...Newest}/>
+      <HomePosts {...Newest} />
       <HomePosts {...Domestic} />
       <HomePosts {...Foreign} />
-
     </main>
   );
 };
