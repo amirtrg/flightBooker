@@ -76,7 +76,7 @@ const HomePosts = (props) => {
           );
         })}
       </div>
-      {SalePackages.length > 3 && (
+      {SalePackages.length > (SalePackages.slice(0, window.screen.width < 500 ? 4 : 3) && (
         <button
           className=" py-1 px-3 text-purple-500  mx-auto block mt-4"
           onClick={moreHandler}
