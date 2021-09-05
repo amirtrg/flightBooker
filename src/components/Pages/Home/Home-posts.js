@@ -63,7 +63,7 @@ const HomePosts = (props) => {
             );
           }
         )}
-        {SalePackages.slice( (SalePackages.slice(0, window.screen.width < 500 ? 4 : 3), SalePackages.length).map((pckg) => {
+        {SalePackages.slice((0, window.screen.width < 500 ? 4 : 3), SalePackages.length).map((pckg) => {
           return (
             <Card
               title={pckg.title}
