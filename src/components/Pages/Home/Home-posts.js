@@ -49,7 +49,7 @@ const HomePosts = (props) => {
       </h1>
 
       <div className="grid grid-cols-2 overflow-hidden gap-2 m-auto mt-3 sm:grid-cols-3 md:grid-cols-4 lg:w-2/3 lg:grid-cols-3">
-        {SalePackages.slice(0, window.screen.width < 500 ? 4 : 3).map(
+        {SalePackages.slice(0, window.screen.width < 500 ? 2 : 3).map(
           (pckg) => {
             return (
               <Card
@@ -63,7 +63,7 @@ const HomePosts = (props) => {
             );
           }
         )}
-        {SalePackages.slice((window.screen.width < 500 ? 4 : 3), SalePackages.length).map((pckg) => {
+        {SalePackages.slice((window.screen.width < 500 ? 2 : 3), SalePackages.length).map((pckg) => {
           return (
             <Card
               title={pckg.title}
@@ -76,7 +76,7 @@ const HomePosts = (props) => {
           );
         })}
       </div>
-      {(SalePackages.length >(window.screen.width < 500 ? 4 : 3)) && (
+      {(SalePackages.length >(window.screen.width < 500 ? 2 : 3)) && (
         <button
           className=" py-1 px-3 text-purple-500  mx-auto block mt-4"
           onClick={moreHandler}
