@@ -63,7 +63,7 @@ const HomePosts = (props) => {
             );
           }
         )}
-        {SalePackages.slice((0, window.screen.width < 500 ? 4 : 3), SalePackages.length).map((pckg) => {
+        {SalePackages.slice((window.screen.width < 500 ? 4 : 3), SalePackages.length).map((pckg) => {
           return (
             <Card
               title={pckg.title}
@@ -76,7 +76,7 @@ const HomePosts = (props) => {
           );
         })}
       </div>
-      {(SalePackages.length >3) && (
+      {(SalePackages.length >(window.screen.width < 500 ? 4 : 3)) && (
         <button
           className=" py-1 px-3 text-purple-500  mx-auto block mt-4"
           onClick={moreHandler}
